@@ -1,5 +1,5 @@
 import "./App.css";
-import { Component } from "react";
+import { useState, useEffect, useRef } from "react";
 import Section from "./components/section/Section";
 
 class App extends Component {
