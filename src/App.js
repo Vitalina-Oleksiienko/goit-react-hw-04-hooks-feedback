@@ -27,28 +27,19 @@ import Section from "./components/section/Section";
     );
   });
     
-  render() {
-    const { good, neutral, bad } = this.state;
-    const countTotalFeedback = good + neutral + bad;
-    const countPositiveFeedbackPercentage = Math.round(
-      (good / countTotalFeedback) * 100
-    );
-    return (
-      <div className="App">
-        <Section
-          title={"Please leave feedback"}
-          handleClickGood={this.handleClickGood}
-          handleClickNeutral={this.handleClickNeutral}
-          handleClickBad={this.handleClickBad}
-          good={good}
-          neutral={neutral}
-          bad={bad}
-          totalFeedback={countTotalFeedback}
-          positiveFeedbackPercentage={countPositiveFeedbackPercentage}
-        />
-      </div>
-    );
-  }
+ return (
+    <div className="App">
+      <Section
+        title={"Please leave feedback"}
+        handleClickGood={handleClickGood}
+        handleClickNeutral={handleClickNeutral}
+        handleClickBad={handleClickBad}
+        good={good}
+        neutral={neutral}
+        bad={bad}
+        totalFeedback={countTotalFeedback.current}
+        positiveFeedbackPercentage={countPositiveFeedbackPercentage.current}
+      />
+    </div>
+  );
 }
-
-export default App;
